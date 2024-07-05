@@ -10,13 +10,13 @@ html {
   padding: 0;
 }
 
-section {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
-
 body {
   font-family: "Poppins", sans-serif;
+  transform: scale(0.8);
+  transform-origin: top left;
+  width: 125%; /* This is to counteract the scaling and keep the width 100% */
+  height: 125%; /* This is to counteract the scaling and keep the height 100% */
+  overflow-x: hidden;
 }
 
 html {
