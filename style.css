@@ -10,6 +10,11 @@ html {
   padding: 0;
 }
 
+section {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
 body {
   font-family: "Poppins", sans-serif;
 }
