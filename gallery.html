@@ -8,10 +8,24 @@
   </head>
   <body>
     <div class="gallery-container">
-      <h1>Project Gallery</h1>
+      <h1 id="title"></h1>
+      <p id="timeline"></p>
+      <h2>Deskripsi Project :</h2>
       <p id="project-description"></p>
+      <h2 style="padding-top: 30px">Peran Saya Dalam Project Ini</h2>
+      <p id="role"></p>
       <div class="gallery" id="gallery"></div>
     </div>
+
+    <div id="modal" class="modal">
+      <span class="close">&times;</span>
+      <div class="modal-content">
+        <img class="modal-image" id="modal-image" />
+        <a class="prev">&#10094;</a>
+        <a class="next">&#10095;</a>
+      </div>
+    </div>
+
     <script src="project.js"></script>
   </body>
 </html>

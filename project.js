@@ -2,15 +2,18 @@ document.addEventListener("DOMContentLoaded", function () {
   const urlParams = new URLSearchParams(window.location.search);
   const projectId = urlParams.get("id");
 
+  let project = null;
+
   fetch("data.json")
     .then((response) => response.json())
     .then((data) => {
-      const project = data.projects.find((p) => p.id === projectId);
+      project = data.projects.find((p) => p.id === projectId);
 
-      const projectTitleElement = document.getElementById("project-title");
+      const projectTitleElement = document.getElementById("title");
       const projectDescriptionElement = document.getElementById(
         "project-description"
       );
+      const RoleElement = document.getElementById("role");
       const galleryElement = document.getElementById("gallery");
 
       if (project) {
@@ -18,13 +21,18 @@ document.addEventListener("DOMContentLoaded", function () {
           projectTitleElement.innerText = project.title;
         }
         if (projectDescriptionElement) {
-          projectDescriptionElement.innerText = project.description;
+          projectDescriptionElement.innerHTML = project.description;
+        }
+        if (RoleElement) {
+          RoleElement.innerHTML = project.role;
         }
         if (galleryElement) {
-          project.images.forEach((image) => {
+          project.images.forEach((image, index) => {
             const imgElement = document.createElement("img");
-            imgElement.src = `images/${image}`;
+            imgElement.src = `assets/${image}`;
             imgElement.alt = project.title;
+            imgElement.dataset.index = index;
+            imgElement.addEventListener("click", openModal);
             galleryElement.appendChild(imgElement);
           });
         }
@@ -39,4 +47,43 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     })
     .catch((error) => console.error("Error loading JSON data:", error));
+
+  const modal = document.getElementById("modal");
+  const modalImg = document.getElementById("modal-image");
+  const closeBtn = document.querySelector(".close");
+  const prevBtn = document.querySelector(".prev");
+  const nextBtn = document.querySelector(".next");
+  let currentIndex;
+
+  function openModal(event) {
+    modal.style.display = "block";
+    currentIndex = parseInt(event.target.dataset.index, 10);
+    modalImg.src = event.target.src;
+  }
+
+  closeBtn.addEventListener("click", () => {
+    modal.style.display = "none";
+  });
+
+  prevBtn.addEventListener("click", () => {
+    if (project) {
+      currentIndex =
+        currentIndex === 0 ? project.images.length - 1 : currentIndex - 1;
+      modalImg.src = `assets/${project.images[currentIndex]}`;
+    }
+  });
+
+  nextBtn.addEventListener("click", () => {
+    if (project) {
+      currentIndex =
+        currentIndex === project.images.length - 1 ? 0 : currentIndex + 1;
+      modalImg.src = `assets/${project.images[currentIndex]}`;
+    }
+  });
+
+  window.addEventListener("click", (event) => {
+    if (event.target === modal) {
+      modal.style.display = "none";
+    }
+  });
 });

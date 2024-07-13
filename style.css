@@ -236,6 +236,7 @@ section {
   display: flex;
   justify-content: center;
   gap: 1rem;
+  margin-top: 20px;
 }
 
 .btn {
@@ -395,6 +396,22 @@ article .icon {
 .project-btn {
   color: black;
   border-color: rgb(163, 163, 163);
+}
+
+#projects p {
+  margin-top: 1rem;
+}
+#project-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem; /* Jarak antar proyek */
+}
+
+.details-container {
+  width: calc(
+    33.33% - 1rem
+  ); /* Lebar masing-masing kolom, mengurangi jarak antar proyek */
+  margin-bottom: 2rem; /* Jarak bawah setiap proyek */
 }
 
 /* CONTACT */
