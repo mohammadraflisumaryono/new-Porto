@@ -16,8 +16,6 @@ document.addEventListener("DOMContentLoaded", function () {
         return response.json();
       })
       .then((data) => {
-        console.log("Data from JSON:", data); // Logging data untuk debugging
-
         if (!Array.isArray(data.projects)) {
           throw new Error(
             "Data format is not as expected (projects array is missing)"
