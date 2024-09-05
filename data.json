@@ -101,6 +101,25 @@
                 "pintars (36).png",
                 "pintars (37).png"
             ]
+        },
+        {
+            "id": "4",
+            "title": "RentRide (Solo Project)",
+            "description": "RentRide adalah platform penyewaan mobil yang dirancang untuk memberikan pengalaman sewa yang mudah dan efisien. Dengan antarmuka yang user-friendly dan fitur-fitur canggih, RentRide memudahkan pengguna untuk mencari, memilih, dan menyewa kendaraan sesuai kebutuhan mereka. Aplikasi ini menawarkan berbagai fitur untuk meningkatkan kemudahan penggunaan, termasuk pencarian kendaraan berdasarkan kriteria spesifik, pemesanan yang cepat, serta manajemen jadwal sewa yang fleksibel. Dirancang dengan teknologi terkini dan antarmuka responsif, RentRide memastikan pengalaman yang nyaman bagi semua pengguna, baik untuk perjalanan sehari-hari maupun kebutuhan jangka panjang. Sebagai pengembang utama, saya terlibat dalam pengembangan berbagai fitur dan memastikan aplikasi berjalan dengan lancar, memenuhi standar kualitas tinggi, dan memberikan solusi terbaik bagi pengguna dalam mencari dan menyewa mobil.",
+            "role": "Solo Project",
+            "role_title": "Fullstack Developer",
+            "timeline": "Agustus 2024 - Sekarang",
+            "images": [
+                "rentalmobil (1).png",
+                "rentalmobil (2).png",
+                "rentalmobil (3).png",
+                "rentalmobil (4).png",
+                "rentalmobil (5).png",
+                "rentalmobil (6).png",
+                "rentalmobil (7).png",
+                "rentalmobil (8).png",
+                "rentalmobil (9).png"
+            ]
         }
     ]
 }
